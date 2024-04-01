@@ -29,17 +29,18 @@ def getLines( InFileName, outfileName, maxLines, startdate = None, enddate = Non
         if maxLines == -1 or count < int(maxLines) :
             if ( elpost['title'] != None ):
                 thetitle = "<h2>" + elpost['title'] + "</h2>"
-
+                                
+                datetime_obj = datetime.datetime.strptime( elpost['post_date'], "%Y-%m-%d %H:%M:%S")
                 
-                # date time things here 
-                if ( 1 ):
-                    f.write( thetitle + "\n" )
-                    f.write( '<b>' + elpost['post_date'] + '</b>' )   
-                    moo = elpost['content']
-                    moo = moo.replace( "\n","<BR>" )
-                    f.write( "<p>" + moo + "</p>")
+                if ( ( DateStart != None ) and ( DateStart < datetime_obj ) ) or (DateStart == None):                      
+                    if ( ( DateEnd != None ) and ( DateEnd > datetime_obj ) ) or (DateEnd == None):
+                        f.write( thetitle + "\n" )
+                        postDate = elpost['post_date'].split()[0]
+                        f.write( '<b>' + postDate + '</b>' )   
+                        moo = elpost['content']
+                        # moo = moo.replace( "\n","<BR>" )
+                        f.write( "<p>" + moo + "</p>")
         
-        # print( elpost['title'])
         count = count + 1 
         None
 
