@@ -21,4 +21,5 @@ This script depends on the wpparser library.
  ToDo
 ======
 
- Create a requirements.txt to install wpparser 
+- Create a requirements.txt to install wpparser 
+- Add a timer 
