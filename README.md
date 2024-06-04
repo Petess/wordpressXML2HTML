@@ -10,11 +10,16 @@ usage: wordpressXML2HTML.py [-h] -f FILE -o OUTPUT [-n NUMBER] [-sd STARTDATE]
 
 With this script the output can then be used by pandoc to get the entries from a blog into word or pdf format. 
 
-wordpressXML2HTML depends on the xmlr library. xmlr has been deprecated. The library can still be directly installed by downloading the xmlr source and using pip install on the directory. 
-
 Once the output has been obtained the html can be converted to docx format with the pandoc command - pandoc -s .\somename.html -o somename.docx
+
+This script depends on the wpparser library. 
+
+ Note
+======
+ The first version of this wordpressXML2HTML depends on the xmlr library. xmlr has been deprecated. The library can still be directly installed by downloading the xmlr source and using pip install on the directory. 
 
  ToDo
 ======
 
- Rewrite using xmltodict
+- Create a requirements.txt to install wpparser 
+- Add a timer 

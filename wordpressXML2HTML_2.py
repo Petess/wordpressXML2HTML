@@ -1,6 +1,7 @@
 import wpparser
 import datetime
 import argparse
+import time
 
 
 def getLines( InFileName, outfileName, maxLines, startdate = None, enddate = None):
@@ -57,5 +58,9 @@ if __name__ == "__main__":
     parser.add_argument('-ed','--enddate',help='Date to stop processing entries at (in YYYY-MM-DD format)')
     
     args = parser.parse_args()   
-        
+
+    t0 = time.time()
     getLines( args.file, args.output, args.number ,args.startdate, args.enddate )
+    t1 = time.time()
+    diff = t1 - t0 
+    print( "The conversion took " + diff + " seconds" ) 
