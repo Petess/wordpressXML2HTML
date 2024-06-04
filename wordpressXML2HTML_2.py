@@ -13,7 +13,7 @@ def getLines( InFileName, outfileName, maxLines, startdate = None, enddate = Non
     if maxLines == None:
         maxLines=-1
     
-    print( maxLines )
+    # print( maxLines )
 
     DateStart = None
     DateEnd = None
@@ -23,6 +23,7 @@ def getLines( InFileName, outfileName, maxLines, startdate = None, enddate = Non
         DateEnd = datetime.datetime.strptime( enddate, "%Y-%m-%d" )
 
     data = wpparser.parse(InFileName)
+    moo = ""
 
     print( "There are ", len( data["posts"] ) , " posts" )
 
@@ -39,8 +40,10 @@ def getLines( InFileName, outfileName, maxLines, startdate = None, enddate = Non
                         postDate = elpost['post_date'].split()[0]
                         f.write( '<b>' + postDate + '</b>' )   
                         moo = elpost['content']
-                        # moo = moo.replace( "\n","<BR>" )
-                        f.write( "<p>" + moo + "</p>")
+                        
+                        if ( moo != None ):
+                            moo = moo.replace( "\n","<BR>" )
+                            f.write( "<p>" + moo + "</p>")
         
         count = count + 1 
         None
@@ -63,4 +66,4 @@ if __name__ == "__main__":
     getLines( args.file, args.output, args.number ,args.startdate, args.enddate )
     t1 = time.time()
     diff = t1 - t0 
-    print( "The conversion took " + diff + " seconds" ) 
+    print( "The conversion took " + str(diff)  + " seconds" ) 
