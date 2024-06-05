@@ -2,6 +2,8 @@ from xmlr import xmliter
 import datetime
 import argparse
 
+# This script is deprecated. Please use wordpressXML2HTML_2.py 
+# 
 
 def getLines( InFileName, outfileName, maxLines, startdate = None, enddate = None):
 
