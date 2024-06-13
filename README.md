@@ -20,8 +20,4 @@ This script depends on the wpparser library.
 ======
  The first version of this wordpressXML2HTML depends on the xmlr library. xmlr has been deprecated. The library can still be directly installed by downloading the xmlr source and using pip install on the directory. 
 
- ToDo
-======
 
-- Create a requirements.txt to install wpparser 
-- Add a timer 
