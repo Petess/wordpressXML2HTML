@@ -18,7 +18,4 @@ Once the output has been obtained the html can be converted to docx format with 
 ======
  The first version of this wordpressXML2HTML depends on the xmlr library. xmlr has been deprecated. The library can still be directly installed by downloading the xmlr source and using pip install on the directory. 
 
- ToDo
-======
 
-- Possibly write a version in Go to produce an executable that runs on Windows, MacOS & Linux 
