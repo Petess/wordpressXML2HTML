@@ -42,9 +42,10 @@ def getLines( InFileName, outfileName, maxLines, startdate = None, enddate = Non
                         moo = elpost['content']
                         
                         if ( moo != None ):
-                            moo = moo.replace( "\n","<BR>" )
-                            f.write( "<p>" + moo + "</p>")
-        
+                            # moo = moo.replace( "\n","<BR>" )
+                            # f.write( "<p>" + moo + "</p>")
+                            f.write( moo )
+
         count = count + 1 
         None
 
